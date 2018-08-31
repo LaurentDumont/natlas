@@ -478,19 +478,19 @@ class natlas_node:
                 if (name.startswith(OID_LLDP_TYPE) == 0):
                     continue
                 print(name)
+                print(value)
                 t = name.split('.')
                 ifidx = t[12]
                 print(ifidx)
                 ifidx2 = t[13]
                 print(ifidx2)
+                
 
                 rip = ''
                 for r in self.lldp_vbtbl:
                     for     n, v in r:
                         n = str(n)
                         print(n)
-                        print(v)
-                        print(r)
                         if (n.startswith(OID_LLDP_DEVADDR + '.' + ifidx + '.' + ifidx2)):
                             t2 = n.split('.')
                             rip = '.'.join(t2[16:])
