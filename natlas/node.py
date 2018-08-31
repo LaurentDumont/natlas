@@ -494,6 +494,7 @@ class natlas_node:
                         if (n.startswith(OID_LLDP_DEVADDR + '.' + ifidx + '.' + ifidx2)):
                             t2 = n.split('.')
                             rip = '.'.join(t2[16:])
+                            print(rip)
 
 
                 lport = self.__get_ifname(ifidx)
