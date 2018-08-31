@@ -185,7 +185,7 @@ class natlas_node:
         self.vpc_domain         = None
         self.stack              = natlas_node_stack()
         self.vss                = natlas_node_vss()
-        
+
         self.cdp_vbtbl          = None
         self.ldp_vbtbl          = None
         self.link_type_vbtbl    = None
@@ -344,7 +344,7 @@ class natlas_node:
         # VPC peerlink
         if (self.opts.get_vpc):
             self.vpc_domain, self.vpc_peerlink_if = self.__get_vpc_info(self.ethif_vbtbl)
-            
+
         # reset the get options
         self.opts.reset()
         return 1
@@ -484,7 +484,7 @@ class natlas_node:
                 print('ifidx = ' + ifidx)
                 ifidx2 = t[12]
                 print('ifidx2 = ' + ifidx2)
-                
+
 
                 rip = ''
                 for r in self.lldp_vbtbl:
@@ -496,10 +496,10 @@ class natlas_node:
                             t2 = n.split('.')
                             rip = '.'.join(t2[16:])
                             #print(rip)
-                         
 
 
-                lport = self.__get_ifname(ifidx)
+
+                lport = self.__get_ifname(ifidx2)
 
                 rport = snmpobj.cache_lookup(self.lldp_vbtbl, OID_LLDP_DEVPORT + '.' + ifidx + '.' + ifidx2)
                 rport = self.shorten_port_name(rport)
@@ -790,7 +790,7 @@ class natlas_node:
                     ip     = '.'.join(tok[11:])
                     interf = self.__get_ifname(str(v))
                     mach   = self.snmpobj.cache_lookup(self.arp_vbtbl, OID_ARP_MAC+'.'+str(v)+'.'+ip)
-                    mac    = natlas_mac.mac_hex_to_ascii(mach, 1) 
+                    mac    = natlas_mac.mac_hex_to_ascii(mach, 1)
                     atype  = self.snmpobj.cache_lookup(self.arp_vbtbl, OID_ARP_TYPE+'.'+str(v)+'.'+ip)
 
                     atype = int(atype)
@@ -819,4 +819,3 @@ class natlas_node:
             port = port.replace('Po', 'po')
 
         return port
-
