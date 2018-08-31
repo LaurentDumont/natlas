@@ -492,9 +492,13 @@ class natlas_node:
                         n = str(n)
                         print(n)
                         if (n.startswith(OID_LLDP_DEVADDR + '.' + ifidx + '.' + ifidx2)):
+                            print('Found neighbor')
                             t2 = n.split('.')
                             rip = '.'.join(t2[16:])
                             print(rip)
+                        else:
+                            print('No neighbor found')
+                         
 
 
                 lport = self.__get_ifname(ifidx)
