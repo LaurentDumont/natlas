@@ -480,10 +480,10 @@ class natlas_node:
                 print(name)
                 print(val)
                 t = name.split('.')
-                ifidx = t[12]
-                print(ifidx)
-                ifidx2 = t[13]
-                print(ifidx2)
+                ifidx = t[11]
+                print('ifidx = ' + ifidx)
+                ifidx2 = t[12]
+                print('ifidx2 = ' + ifidx2)
                 
 
                 rip = ''
