@@ -490,14 +490,12 @@ class natlas_node:
                 for r in self.lldp_vbtbl:
                     for     n, v in r:
                         n = str(n)
-                        print(n)
+                        #print(n)
                         if (n.startswith(OID_LLDP_DEVADDR + '.' + ifidx + '.' + ifidx2)):
-                            print('Found neighbor')
+                            #print('Found neighbor')
                             t2 = n.split('.')
                             rip = '.'.join(t2[16:])
-                            print(rip)
-                        else:
-                            print('No neighbor found')
+                            #print(rip)
                          
 
 
