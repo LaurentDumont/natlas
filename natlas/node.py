@@ -478,7 +478,7 @@ class natlas_node:
                 if (name.startswith(OID_LLDP_TYPE) == 0):
                     continue
                 print(name)
-                print(value)
+                print(val)
                 t = name.split('.')
                 ifidx = t[12]
                 print(ifidx)
